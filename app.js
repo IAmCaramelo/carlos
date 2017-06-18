@@ -5,6 +5,7 @@ var bodyparser = require('body-parser');
 var path = require('path');
 
 app.set('view engine','pug'); // Indica que iremos usar o pugjs para mostrar as paginas -> www.pugjs.org
+app.set('trust proxy','13.81.108.99'); // Força a utilização de ssl
 
 app.use(express.static(path.join(__dirname, '/public')));  // Permite carregar ficheiros que estajam na pasta public
 app.use(bodyparser.urlencoded({ extended: true })); // Encripta o url
