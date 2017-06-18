@@ -79,4 +79,6 @@ app.post('/veiculos/:tipoVeiculo',function(req,res){
     }
 });
 
-app.listen(443,'13.81.108.99'); // escuta na porta 443 para fazer uso do ssl do azure
+var port = process.env.port || 443; // porta a escutar
+
+app.listen(port,'13.81.108.99'); // escuta na porta 443 para fazer uso do ssl do azure
