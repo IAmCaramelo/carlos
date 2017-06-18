@@ -78,4 +78,6 @@ app.post('/veiculos/:tipoVeiculo',function(req,res){
     }
 });
 
-app.listen('13.81.108.99',process.env.port || 443); // escuta na porta 80
+var port = process.env.port || 443;
+
+app.listen('13.81.108.99',port); // escuta na porta 80
