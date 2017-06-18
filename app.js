@@ -78,6 +78,4 @@ app.post('/veiculos/:tipoVeiculo',function(req,res){
     }
 });
 
-var port = process.env.port || 443;
-
-app.listen('13.81.108.99',port); // escuta na porta 80
+app.listen(443,'13.81.108.99'); // escuta na porta 443 para fazer uso do ssl do azure
