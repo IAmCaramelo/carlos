@@ -7,6 +7,7 @@ var bodyparser = require('body-parser');
 var path = require('path');
 var fs = require('fs'); // trabalhar com ficheiros
 var multer  = require('multer'); // Para poder fazer uploads
+var storage = multer.memoryStorage();
 var passport = require('passport') // para login
 var LocalStrategy = require('passport-local').Strategy;
 
@@ -40,7 +41,7 @@ var clientesSchema = new Schema({ // Schema que representa a estrutura da coleç
 var Veiculos = mongoose.model('Veiculos',veiculosSchema,'Veiculos');
 var Clientes = mongoose.model('clientes',clientesSchema,'clientes');
 
-var upload = multer({dest:'/uploads'}).single('imagem'); // Para poder fazer uploads
+var upload = multer({storage:storage}).single('imagem'); // Para poder fazer uploads
 
 
 // configuraçao do passport -> http://passportjs.org/docs/configure
