@@ -111,6 +111,12 @@ app.get('/login',function(req,res){
 	res.render('login',{'user':req.user}); //  Mostra a pagina login.pug
 });
 
+// Logout
+app.get('/logout', function(req, res) {                                         //
+    req.logout();                                                               //
+    res.redirect('/');                                                          //
+});
+
 // Veiculos
 app.get('/veiculos/:tipoVeiculo',function(req,res){
 	var veiculos={};
