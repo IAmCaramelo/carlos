@@ -1,0 +1,77 @@
+snippets:
+
+Obter um cliente da base de dados:
+
+var pessoa;
+var sqlCursor = Clientes.findOne({'Nome':'Carlos'}).cursor();
+
+sqlCursor.on('data',function(cliente){
+	if(cliente)
+		pessoa = cliente;
+	else
+		console.log('Cliente não encontrado!');		
+});
+
+sqlCursor.on('close',function(){
+	console.log(pessoa);
+	res.send(pessoa);
+});
+//////////////////////////////
+
+Actualizar um cliente:
+
+	var sqlCursor = Clientes.findById(idClientes,function(err,cliente){
+		cliente.Nome = "NovoCliente";
+		
+		return cliente.save(function(err,pessoa){
+			if(err){
+				console.log('Não foi possivel guardar o cliente: '+pessoa._id);
+				console.log('Erro: '+err);
+				throw err;
+			}
+			
+			console.log('Clientes '+pessoa._id+' Actualizado!');
+		});
+	});
+	
+/////////////////////////////
+Apagar um cliente:
+
+	var sqlCursor = Clientes.findById(idClientes,function(err,cliente){
+		if(err){
+			console.log('Erro a eliminar cliente: '+err);
+			throw err;
+		}
+		
+		return cliente.remove();
+	});
+	
+/////////////////////////////
+
+Adicionar um novo cliente:
+
+	var cliente = new Clientes();
+	cliente.Nome="Joana";
+	cliente.Sobrenome="Costa";
+	
+	cliente.save(function(err,cli){
+		if(cli)
+			console.log('Cliente '+cli._id+' adicionado!');
+		else
+			console.log('Erro ao criar novo cliente');
+	});
+	
+////////////////////////////
+
+// Apaga cliente com valores recebidos por post/delete
+app.delete('/pessoa',function(req,res){
+		var cliente = req.body.Cliente;
+		var sqlCursor = Clientes.findById(cliente.id,function(err,cliente){
+		if(err){
+			console.log('Erro a eliminar cliente: '+err);
+			throw err;
+		}
+		
+		return cliente.remove();
+	});
+});

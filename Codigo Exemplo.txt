@@ -1,0 +1,77 @@
+snippets:
+
+Obter um veiculo da base de dados:
+
+var carro;
+var sqlCursor = Veiculos.findOne({'Marca':'Mercedes'}).cursor();
+
+sqlCursor.on('data',function(veiculo){
+	if(veiculo)
+		carro = veiculo;
+	else
+		console.log('Veiculo não encontrado!');		
+});
+
+sqlCursor.on('close',function(){
+	console.log(carro);
+	res.send(carro);
+});
+------------------------------------------------------------------------------------
+
+Actualizar um veiculo:
+
+	var sqlCursor = Veiculos.findById(idVeiculo,function(err,veiculo){
+		veiculo.Marca = "NovaMarca";
+		
+		return veiculo.save(function(err,carro){
+			if(err){
+				console.log('Não foi possivel guardar o veiculo: '+carro._id);
+				console.log('Erro: '+err);
+				throw err;
+			}
+			
+			console.log('Veiculo '+carro._id+' Actualizado!');
+		});
+	});
+	
+-------------------------------------------------------------------------------------
+Apagar um veiculo:
+
+	var sqlCursor = Veiculos.findById(idVeiculo,function(err,veiculo){
+		if(err){
+			console.log('Erro a eliminar veiculo: '+err);
+			throw err;
+		}
+		
+		return veiculo.remove();
+	});
+	
+-------------------------------------------------------------------------------------
+
+Adicionar um novo veiculo:
+
+	var veiculo = new Veiculos();
+	veiculo.Marca="Peugeot";
+	veiculo.Modelo="306";
+	
+	veiculo.save(function(err,vei){
+		if(vei)
+			console.log('Veiculo '+vei._id+' adicionado!');
+		else
+			console.log('Erro ao criar novo veiculo');
+	});
+	
+-------------------------------------------------------------------------------------
+
+// Apaga veiculo com valores recebidos por post/delete
+app.delete('/carro',function(req,res){
+		var veiculo = req.body.Veiculo;
+		var sqlCursor = Veiculos.findById(veiculo.id,function(err,veiculo){
+		if(err){
+			console.log('Erro a eliminar veiculo: '+err);
+			throw err;
+		}
+		
+		return veiculo.remove();
+	});
+});
