@@ -1,0 +1,66 @@
+doctype html
+html(lang="en")
+head
+    title Stand Xpto
+    meta(charset="utf-8")
+    link(rel="stylesheet",href="/css/reset.css",type="text/css",media="screen")
+    link(rel="stylesheet",href="/css/style.css",type="text/css",media="screen")
+    link(rel="stylesheet",href="/css/grid.css",type="text/css",media="screen")
+    <!--[if lt IE 9]>
+        link(rel="stylesheet",href="/css/ie.css",type="text/css",media="screen")
+    <![endif]-->
+body(id="page1")
+    div(class="main-bg")
+        div(class="bg")
+            header
+                div(class="main")
+                    div(class="wrapper")
+                        h1
+                            a(href="/") Stand Xpto
+                    div(class="fright")
+                        div(class="indent")
+                            span(class="address") Avenida Dr. Francisco Sá Carneiro, n.º 50, 6300-559 Guarda
+                                span(class="phone") Tel: +351 271 220 164
+                    nav
+                        ul(class="menu")
+                            li
+                                a(class="active" href="/") Home
+                            li
+                                a(href="/about") Sobre Nos
+                            li
+                                a(href="/veiculos/carro") Carros
+                            li
+                                a(href="/veiculos/mota") Motas
+                            li
+                                a(href="/stands") Stands
+                            if(user)
+                                li
+                                    a(href="/logout") Logout
+                            else
+                                li
+                                    a(href="/login") Login
+            section(id="content")
+                div(class="main")
+                        div(class="container-bot")
+                            div(class="container-top")
+                                div(class="container")
+                                    div(class="wrapper")
+                                        article(class="grid_8")
+                                            div(class="indent-left")
+                                                h2 Stand Xpto
+                                                div(class="prev-indent-bot")
+                                                    div(style="float:left;margin-right:20px;text-align:justify;")
+                                                        form(action="/login",method="post")
+                                                            p
+                                                                strong Login
+                                                            label Username: 
+                                                                input(type="text",name="username",placeholder="Username")
+                                                            br
+                                                            label Password: 
+                                                                input(type="password",placeholder="Password",name="password",style="margin-left:2px")
+                                                            br
+                                                            br
+                                                            span
+                                                                input(type="submit",class="button",style="border:none;margin-left:35px")
+                                                            span &emsp;
+                                                                input(type="reset",class="button",style="border:none")

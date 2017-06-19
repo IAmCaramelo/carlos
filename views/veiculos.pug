@@ -6,17 +6,7 @@ head
     link(rel="stylesheet",href="/css/reset.css",type="text/css",media="screen")
     link(rel="stylesheet",href="/css/style.css",type="text/css",media="screen")
     link(rel="stylesheet",href="/css/grid.css",type="text/css",media="screen")
-    script(src="/js/jquery-1.7.1.min.js",type="text/javascript")
-    script(src="/js/cufon-yui.js",type="text/javascript")
-    script(src="/js/cufon-replace.js",type="text/javascript")
-    script(src="/js/Vegur_500.font.js",type="text/javascript")
-    script(src="/js/FF-cash.js",type="text/javascript")
-    script(src="/js/tms-0.3.js",type="text/javascript")
-    script(src="/js/tms_presets.js",type="text/javascript")
-    script(src="/js/jquery.easing.1.3.js",type="text/javascript")
-    script(src="/js/jquery.equalheights.js",type="text/javascript")
     <!--[if lt IE 9]>
-        script(type="text/javascript",src="/js/html5.js")
         link(rel="stylesheet",href="/css/ie.css",type="text/css",media="screen")
     <![endif]-->
 body(id="page1")
@@ -43,8 +33,12 @@ body(id="page1")
                                 a(href="/veiculos/mota") Motas
                             li
                                 a(href="/stands") Stands
-                            li
-                                a(href="/login") Login
+                            if(user)
+                                li
+                                    a(href="/logout") Logout
+                            else
+                                li
+                                    a(href="/login") Login
             section(id="content")
                 div(class="main")
                         div(class="container-bot")
@@ -58,7 +52,7 @@ body(id="page1")
                                                     each veiculo in veiculos
                                                         div
                                                             div(style="float:left;margin-right:20px;")
-                                                                img(src="/images/"+veiculo.Tipo+"/"+veiculo.Marca+".jpg",style="width:200px;height:100px")
+                                                                img(src="/images/"+veiculo.Tipo+"/"+veiculo.Marca+"-"+veiculo.Modelo+".jpg",style="width:200px;height:100px")
                                                             div(style="float:left;text-align:justify")
                                                                 p Marca: #{veiculo.Marca}
                                                                     br
@@ -67,19 +61,3 @@ body(id="page1")
                                                                     span Tipo: #{veiculo.Tipo}
                                                                     br
                                                                     span Preco: #{veiculo.Preco}
-    script(type="text/javascript") Cufon.now();
-    script(type="text/javascript").
-        $(window).load(function () {
-            $('.slider')._TMS({
-                duration: 1000,
-                easing: 'easeOutQuint',
-                preset: 'simpleFade',
-                slideshow: 7000,
-                banners: false,
-                pauseOnHover: true,
-                pagination: false,
-                pagNums: false,
-                nextBu: '.next',
-                prevBu: '.prev'
-            });
-        });

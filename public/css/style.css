@@ -16,7 +16,7 @@ body {
 	color:#7f7f7f;
 	min-width:960px;
 	height:100%;
-	background:url(../images/body-bg.jpg) center top repeat #151515
+	background:url(../siteimages/body-bg.jpg) center top repeat #151515
 }
 .ic {
 	border:0;
@@ -33,12 +33,12 @@ body {
 .main-bg {
 	width:100%;
 	min-height:100%;
-	background:url(../images/bg-2.jpg) center top repeat-x;
+	background:url(../siteimages/bg-2.jpg) center top repeat-x;
 }
 .bg {
 	width:100%;
 	min-height:100%;
-	background:url(../images/bg.jpg) center top no-repeat;
+	background:url(../siteimages/bg.jpg) center top no-repeat;
 }
 .main {
 	width:960px;
@@ -177,7 +177,7 @@ header {
 }
 h1 {
 	padding:45px 20px 37px 26px;
-	background:url(../images/h1-bg.jpg) 0 0 no-repeat;
+	background:url(../siteimages/h1-bg.jpg) 0 0 no-repeat;
 	float:left;
 }
 h1 a {
@@ -185,7 +185,7 @@ h1 a {
 	width:230px;
 	height:55px;
 	text-indent:-999em;
-	background:url(../images/logo.png) 0 0 no-repeat;
+	background:url(../siteimages/logo.png) 0 0 no-repeat;
 }
 .address {
 	display:block;
@@ -206,7 +206,7 @@ h1 a {
 header nav {
 	width:100%;
 	height:52px;
-	background:url(../images/menu-bg.jpg) 0 0 no-repeat;
+	background:url(../siteimages/menu-bg.jpg) 0 0 no-repeat;
 	overflow:hidden;
 }
 #page1 header nav {
@@ -215,7 +215,7 @@ header nav {
 .menu li {
 	float:left;
 	position:relative;
-	background:url(../images/menu-spacer.gif) left top no-repeat;
+	background:url(../siteimages/menu-spacer.gif) left top no-repeat;
 }
 .menu > li:first-child {
 	background:none;
@@ -230,7 +230,7 @@ header nav {
 }
 .menu > li:first-child > a {
 	text-indent:-999em;
-	background:url(../images/menu-home.png) center -25px no-repeat;
+	background:url(../siteimages/menu-home.png) center -25px no-repeat;
 	min-width:22px;
 }
 .menu li a.active, .menu > li > a:hover {
@@ -264,11 +264,11 @@ header nav {
 	margin-top:-200px;
 }
 .prev {
-	background:url(../images/slider-prev.png) 0 0 no-repeat;
+	background:url(../siteimages/slider-prev.png) 0 0 no-repeat;
 	left:0;
 }
 .next {
-	background:url(../images/slider-next.png) 0 0 no-repeat;
+	background:url(../siteimages/slider-next.png) 0 0 no-repeat;
 	right:0;
 }
 /*********************************content*************************************/
@@ -280,7 +280,7 @@ header nav {
 }
 .spacer-1 {
 	width:100%;
-	background:url(../images/pic-1.gif) 217px 0 repeat-y;
+	background:url(../siteimages/pic-1.gif) 217px 0 repeat-y;
 }
 h2 {
 	font-size:40px;
@@ -315,13 +315,13 @@ h6 {
 .border-bot {
 	width:100%;
 	padding-bottom:31px;
-	background:url(../images/pic-1.gif) 0 bottom repeat-x;
+	background:url(../siteimages/pic-1.gif) 0 bottom repeat-x;
 }
 .border-bot2 {
 	width:100%;
 	padding-bottom:23px;
 	margin-bottom:18px;
-	background:url(../images/pic-1.gif) 0 bottom repeat-x;
+	background:url(../siteimages/pic-1.gif) 0 bottom repeat-x;
 }
 .box {
 	width:260px;
@@ -336,17 +336,17 @@ h6 {
 .container-bot {
 	width:100%;
 	padding-bottom:6px;
-	background:url(../images/container-bot.png) left bottom no-repeat;
+	background:url(../siteimages/container-bot.png) left bottom no-repeat;
 }
 .container-top {
 	width:100%;
 	padding-top:6px;
-	background:url(../images/container-top.png) left top no-repeat;
+	background:url(../siteimages/container-top.png) left top no-repeat;
 }
 .container {
 	width:100%;
 	padding:20px 0 40px;
-	background:url(../images/container-tail.png) left top repeat-y;
+	background:url(../siteimages/container-tail.png) left top repeat-y;
 }
 .button {
 	display:inline-block;
@@ -355,7 +355,7 @@ h6 {
 	line-height:1.23em;
 	font-weight:bold;
 	color:#000;
-	background:url(../images/button-tail.gif) 0 0 repeat-x #fb4400;
+	background:url(../siteimages/button-tail.gif) 0 0 repeat-x #fb4400;
 	cursor:pointer;
 	border-radius:3px;
 	-moz-border-radius:3px;
@@ -368,7 +368,7 @@ h6 {
 .list-1 li {
 	line-height:18px;
 	padding:8px 0 8px 10px;
-	background:url(../images/marker-1.gif) 0 15px no-repeat;
+	background:url(../siteimages/marker-1.gif) 0 15px no-repeat;
 }
 .list-1 a {
 	display:inline-block;
@@ -381,7 +381,7 @@ h6 {
 .list-2 li {
 	line-height:20px;
 	padding:5px 0 5px 10px;
-	background:url(../images/marker-1.gif) 0 13px no-repeat;
+	background:url(../siteimages/marker-1.gif) 0 13px no-repeat;
 }
 .list-2 a {
 	display:inline-block;
@@ -404,7 +404,7 @@ h6 {
 	font-weight:bold;
 	padding-left:14px;
 	color:#fff;
-	background:url(../images/marker-2.gif) 0 10px no-repeat;
+	background:url(../siteimages/marker-2.gif) 0 10px no-repeat;
 }
 .link-1:hover {
 	text-decoration:underline;
@@ -475,7 +475,7 @@ dl.main-address span {
 	top:0;
 	width:100%;
 	height:100%;
-	background:url(../images/video-marker.png) no-repeat 50% 50%;
+	background:url(../siteimages/video-marker.png) no-repeat 50% 50%;
 	z-index:2;
 	padding:0;
 }
